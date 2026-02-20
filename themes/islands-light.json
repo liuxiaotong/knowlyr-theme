@@ -521,6 +521,7 @@
     "terminalStickyScrollHover.background": "#d4e6e1",
     "terminalOverviewRuler.findMatchForeground": "#26884080",
     "terminalOverviewRuler.cursorForeground": "#0d6b5e",
+    "terminalLink.decorationForeground": "#0d6b5e",
 
     "testing.peekBorder": "#e34050",
     "testing.peekHeaderBackground": "#fdedef",
