@@ -1,0 +1,6 @@
+.github/**
+.vscode/**
+assets/screenshots/**
+.gitignore
+.gitattributes
+CLAUDE.md

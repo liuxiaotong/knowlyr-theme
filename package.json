@@ -1,0 +1,49 @@
+{
+  "name": "knowlyr-theme",
+  "displayName": "Knowlyr Theme",
+  "description": "Knowlyr Dark + Knowlyr Light — warm syntax, clean aesthetic, pro-human color theme for VS Code.",
+  "version": "3.0.0",
+  "publisher": "knowlyr",
+  "license": "MIT",
+  "icon": "assets/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liuxiaotong/knowlyr-theme"
+  },
+  "homepage": "https://github.com/liuxiaotong/knowlyr-theme",
+  "bugs": {
+    "url": "https://github.com/liuxiaotong/knowlyr-theme/issues"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "dark theme",
+    "light theme",
+    "teal",
+    "knowlyr",
+    "color theme",
+    "pro-human"
+  ],
+  "galleryBanner": {
+    "color": "#151c1a",
+    "theme": "dark"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "Knowlyr Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/islands-dark-v2.json"
+      },
+      {
+        "label": "Knowlyr Light",
+        "uiTheme": "vs",
+        "path": "./themes/islands-light.json"
+      }
+    ]
+  }
+}
