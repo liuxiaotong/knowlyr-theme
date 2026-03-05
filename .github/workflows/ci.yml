@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate package.json
+        run: python3 -c "import json; json.load(open('package.json')); print('package.json OK')"
+
+      - name: Validate theme files
+        run: |
+          FAILED=0
+          for f in themes/islands-dark-v2.json themes/islands-light.json; do
+            if python3 -c "import json; json.load(open('$f')); print('  OK: $f')"; then
+              true
+            else
+              echo "  INVALID: $f"
+              FAILED=1
+            fi
+          done
+          if [ "$FAILED" = "1" ]; then
+            echo "Theme validation FAILED"
+            exit 1
+          fi
+          echo "All theme files valid"
+
+      - name: Verify required assets
+        run: |
+          MISSING=0
+          for f in assets/icon.png; do
+            if [ ! -f "$f" ]; then
+              echo "  MISSING: $f"
+              MISSING=1
+            fi
+          done
+          if [ "$MISSING" = "1" ]; then
+            echo "Asset verification FAILED"
+            exit 1
+          fi
+          echo "All required assets present"
